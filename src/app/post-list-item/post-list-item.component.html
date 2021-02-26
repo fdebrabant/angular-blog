@@ -1,0 +1,13 @@
+<div [ngClass]="{'liked': like, 'disliked': dislike}">
+    <div>
+        <h2>{{posts.title}}</h2>
+        <span>{{posts.created_at}}</span>
+    </div>
+    <p>{{posts.content}}</p>
+    <span>Likes: {{posts.loveIts}}</span>
+    <span>{{posts.created_at}}</span>
+    <button (click)="Onlike()">Like</button>
+    <button (click)="Ondislike()">Dislike</button>
+
+</div>
+

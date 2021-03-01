@@ -13,27 +13,29 @@ export class PostListComponent implements OnInit {
   public postTwo!: Post;
   public postThree!: Post;
 
+  lastUpdate = new Date ();
+
 
   ngOnInit(): void {
     this.postOne = new Post (
       "How to cook a pizza", 
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam necessitatibus libero quas aliquid provident ipsa ratione.",
       8,
-      'Date'
+      this.lastUpdate
     )
 
     this.postTwo = new Post (
       "How fix a problem", 
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam necessitatibus libero quas aliquid provident ipsa ratione.",
       12,
-      'Date'
+      this.lastUpdate
     )
 
     this.postThree = new Post (
       "How to say 'I want break up' to Brad Pitt", 
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam necessitatibus libero quas aliquid provident ipsa ratione.",
       54,
-      'Date'
+      this.lastUpdate
     )
 
     this.posts = [this.postOne, this.postTwo, this.postThree]

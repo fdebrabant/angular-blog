@@ -1,6 +1,9 @@
 <h1>Posts</h1>
 
 <div *ngFor="let post of posts">
-    <app-post-list-item [posts]="post"></app-post-list-item>
+    <app-post-list-item 
+        [posts]="post" 
+        [id]="post.id"
+    ></app-post-list-item>
 </div>
 

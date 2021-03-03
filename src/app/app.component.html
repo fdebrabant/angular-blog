@@ -54,9 +54,19 @@
   }
 
 </style>
-
+<nav>
+  <div>
+    <ul>
+      <li>
+        <a [routerLink]="['/auth']">Authentification</a>
+      </li>
+      <li>
+        <a [routerLink]="['/posts']">Posts</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 <div class="content" role="main">
-  <app-post-list>
-  </app-post-list>
+  <router-outlet></router-outlet>
 
 </div>

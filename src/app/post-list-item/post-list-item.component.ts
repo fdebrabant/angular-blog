@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { PostService } from '../services/post.service';
 import { Post } from './models/post.model';
 
 @Component({
@@ -8,42 +9,25 @@ import { Post } from './models/post.model';
 })
 export class PostListItemComponent implements OnInit {
 
-  @Input() 
-  posts!: Post;
+  constructor(public postService: PostService) {}
 
-  like: boolean = false;
-  dislike: boolean = false;
+  @Input() posts!: Post;
+  @Input() id!: number;
 
-  constructor() {}
+   like: any;
+   dislike: any;
 
   ngOnInit(): void {
+    this.like = this.postService.like;
+    this.dislike = this.postService.dislike;
   }
 
-  // Oncount(number: number) {
-  //   if (this.like === true) {
-  //     number = number + 1
-  //   }
-  // }
-
   Onlike(): void {
-    // if (this.dislike === false) {
-    //   this.like === false;
-    // } else {
-    //   this.like = !this.like;
-    // }
-
     this.like = !this.like;
   }
 
   Ondislike(): void {
-    // if (this.like === false) {
-    //   this.dislike === false;
-    // } else {
-    //   this.dislike = !this.dislike;
-    // }
-
     this.dislike = !this.dislike;
   }
-
 
 }
